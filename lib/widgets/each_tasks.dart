@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../models/task_data.dart';
 
 class EachTask extends StatefulWidget {
-  bool isChecked;
+  // bool isChecked;
   final String taskText;
-  EachTask({super.key, required this.isChecked, required this.taskText});
+  final VoidCallback longPressCallback;
+  EachTask({super.key, required this.taskText, required this.longPressCallback});
 
   @override
   State<EachTask> createState() => _EachTaskState();
@@ -11,18 +14,20 @@ class EachTask extends StatefulWidget {
 
 class _EachTaskState extends State<EachTask> {
 
-  // bool isChecked = false;
+  bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onLongPress: widget.longPressCallback,
       title: Text(widget.taskText,
-      style: TextStyle(decoration: widget.isChecked == true ? TextDecoration.lineThrough : null),),
-      trailing: Checkbox(value: widget.isChecked, onChanged: (bool? value) {
+      style: TextStyle(decoration: isChecked == true ? TextDecoration.lineThrough : null),),
+      trailing: Checkbox(value: isChecked, onChanged: (bool? value) {
         setState(() {
-          widget.isChecked = value!;
+          isChecked = value!;
         });
       },),
+
     );
   }
 }

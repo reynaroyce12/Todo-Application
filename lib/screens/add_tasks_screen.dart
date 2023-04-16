@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_app/models/task_data.dart';
 import '../widgets/task_lists.dart';
 import '../models/task.dart';
 import './task_screen.dart';
 
 class AddTasks extends StatefulWidget {
-   AddTasks(this.addTaskCallback, {super.key});
-
-  final Function addTaskCallback;
 
   @override
   State<AddTasks> createState() => _AddTasksState();
@@ -54,7 +53,8 @@ class _AddTasksState extends State<AddTasks> {
 
             TextButton(
               onPressed: () {
-                widget.addTaskCallback(newTask);
+                Provider.of<TaskData>(context, listen: false).addTask(newTask);     //The listen parameter is given as false to only pass the final value and not update after each change
+                Navigator.pop(context);
               },
               style: TextButton.styleFrom(
                   backgroundColor: Colors.lightBlueAccent,
