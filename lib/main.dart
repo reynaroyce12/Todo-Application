@@ -18,6 +18,11 @@ class MyApp extends StatelessWidget {
           return TaskData();                    // returning the list
       },
       child: MaterialApp(
+        theme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: const Color(0xFF2E4F4F),
+          primaryColor: const Color(0xFF0E8388),
+            unselectedWidgetColor: const Color(0XFF0E8388)
+        ),
         home: TaskScreen(),
       ),
     );

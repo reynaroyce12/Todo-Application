@@ -21,8 +21,8 @@ class _EachTaskState extends State<EachTask> {
     return ListTile(
       onLongPress: widget.longPressCallback,
       title: Text(widget.taskText,
-      style: TextStyle(decoration: isChecked == true ? TextDecoration.lineThrough : null),),
-      trailing: Checkbox(value: isChecked, onChanged: (bool? value) {
+      style: TextStyle(color: const Color(0XFF2C3333),fontWeight: FontWeight.w600, decoration: isChecked == true ? TextDecoration.lineThrough : null),),
+      trailing: Checkbox(activeColor: const Color(0XFF2C3333),value: isChecked, onChanged: (bool? value) {
         setState(() {
           isChecked = value!;
         });

@@ -4,7 +4,7 @@ import 'dart:collection';
 
 class TaskData extends ChangeNotifier {
 
-  final List<Task> _tasksList = [Task(name: 'CLick the add button to add items and long press on items to delete')];
+  final List<Task> _tasksList = [Task(name: 'Click the add button to add items and long press on items to delete')];
 
   //This is a getter function that provides tge read-only version of the tasklist function above which is private
   UnmodifiableListView<Task> get tasksList {

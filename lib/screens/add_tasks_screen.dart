@@ -18,7 +18,7 @@ class _AddTasksState extends State<AddTasks> {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-          color: Colors.white,
+          color: Color(0XFFF4EEE0),
           borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0),)
       ),
       child: Padding(
@@ -26,7 +26,7 @@ class _AddTasksState extends State<AddTasks> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text('Add Items',textAlign: TextAlign.center, style: TextStyle(fontSize: 30.0, color: Colors.lightBlueAccent, fontWeight: FontWeight.w700),),
+            const Text('Add Items',textAlign: TextAlign.center, style: TextStyle(fontSize: 30.0, color: Color(0Xff2C3333), fontWeight: FontWeight.w700),),
 
             const SizedBox(
               height: 20.0,
@@ -36,13 +36,14 @@ class _AddTasksState extends State<AddTasks> {
               onChanged: (value) {
                 newTask = value;
               },
+              style: const TextStyle(color: Color(0xff2C3333), fontWeight: FontWeight.w600),
               decoration: const InputDecoration(
                 enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.lightBlueAccent, width: 3.0),
+                  borderSide: BorderSide(color: Color(0XFF2C3333), width: 3.0),
 
                 ),
                 focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.lightBlueAccent, width: 3.0),
+                  borderSide: BorderSide(color: Color(0XFF2C3333), width: 3.0),
                 ),
               ),
             ),
@@ -57,10 +58,10 @@ class _AddTasksState extends State<AddTasks> {
                 Navigator.pop(context);
               },
               style: TextButton.styleFrom(
-                  backgroundColor: Colors.lightBlueAccent,
+                  backgroundColor: const Color(0xFF0E8388),
                   padding: const EdgeInsets.all(10.0),
               ),
-              child: const Text('Add', style: TextStyle(color: Colors.white, fontSize: 20.0),),
+              child: const Text('Add', style: TextStyle(color: Color(0XFF2C3333), fontSize: 20.0),),
             )
           ],
         ),

@@ -13,19 +13,14 @@ class TaskScreen extends StatefulWidget {
 }
 
 class _TaskScreenState extends State<TaskScreen> {
-  // List<Task> tasksList = [
-  //   Task(name: 'Buy Milk'),
-  //   Task(name: 'Buy Banana'),
-  //   Task(name: 'Buy bread'),
-  // ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
+      // backgroundColor: Colors.lightBlueAccent,
       floatingActionButton: FloatingActionButton(
         heroTag: 'add button',
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: const Color(0XFF0E8388),
         onPressed: () {
           showModalBottomSheet(
               context: context,
@@ -45,15 +40,15 @@ class _TaskScreenState extends State<TaskScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children:  [
                 const CircleAvatar(
-                    backgroundColor: Colors.white,
+                    backgroundColor: Color(0XFFF4EEE0),
                     radius: 30.0,
-                    child: Icon(Icons.list, size: 30.0, color: Colors.lightBlueAccent,),
+                    child: Icon(Icons.list, size: 30.0, color: Color(0XFF2C3333),),
                 ),
                const SizedBox(
                   height: 20.0,
                 ),
-                const Text('Todoey', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 50.0),),
-                Text('${Provider.of<TaskData>(context).taskCount} tasks', style: TextStyle(color: Colors.white, fontSize: 15.0),),
+                const Text('Todoey', style: TextStyle(color: Color(0XFFF4EEE0), fontWeight: FontWeight.w600, fontSize: 50.0),),
+                Text('${Provider.of<TaskData>(context).taskCount} tasks', style: const TextStyle(color: Color(0XFFF4EEE0), fontSize: 15.0),),
               ],
             ),
           ),
@@ -62,7 +57,7 @@ class _TaskScreenState extends State<TaskScreen> {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               decoration: const BoxDecoration(
-                color: Colors.white,
+                color: Color(0XFFF4EEE0),
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)),
               ),
               child: TasksLists(),
@@ -74,12 +69,3 @@ class _TaskScreenState extends State<TaskScreen> {
   }
 }
 
-// Widget buildBottomSheet(BuildContext context) {
-//   return Container(
-//     decoration: const BoxDecoration(
-//       color: Colors.green,
-//       borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0),)
-//     ),
-//     child: const TasksLists(),
-//   );
-// }
